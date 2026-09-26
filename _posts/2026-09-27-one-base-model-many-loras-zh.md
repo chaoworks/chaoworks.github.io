@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "一份底模，多个 LoRA：我和 vLLM、Qwen 斗智斗勇的那些日子"
-date: 2026-09-27 12:00:00 +0800
+date: 2026-09-27 00:30:00 +0800
 categories: [LLM, vLLM, LoRA]
 lang: zh-CN
 ---
