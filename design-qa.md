@@ -31,7 +31,6 @@ The homepage hero and latest-post row were compared in the combined image. The a
 - Language links target the matching translation on article pages.
 - Root page contains browser-language routing and honors a saved manual preference.
 - Manual language selection persists through `localStorage`.
-- Legacy article URLs retain working redirects.
 - CSS and JavaScript assets return HTTP 200.
 - The remote renderer showed the deployed CSS and JavaScript behavior. Direct console inspection was unavailable in the current browser environment; deployed DOM output and asset loading were checked instead.
 
