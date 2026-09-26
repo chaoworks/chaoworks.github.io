@@ -4,9 +4,13 @@ title: "One Base Model, Many LoRAs: My Adventures with vLLM and Qwen"
 date: 2026-09-27 00:35:00 +0800
 categories: [LLM, vLLM, LoRA]
 lang: en
+permalink: /en/posts/multi-lora/
+description: An engineering retrospective on building Multi-LoRA, adapting Qwen to vLLM, and handling routing, tensor parallelism, packed layers, and extended vocabularies.
+reading_time: 12
+translation_url: /zh/posts/multi-lora/
+translation_lang: zh
+translation_label: 阅读中文版
 ---
-
-[阅读中文版]({% post_url 2026-09-27-one-base-model-many-loras-zh %})
 
 > This is an engineering retrospective from 2023–2024. The code and architecture described here reflect the vLLM version available at the time. Please do not treat it as a current tutorial and copy everything into production—unless you also want a refresher course in incident debugging.
 

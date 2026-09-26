@@ -3,11 +3,11 @@ description: Notes on LLM systems, inference engineering, and applied AI.
 url: https://chaoworks.github.io
 author: Chao Wang
 timezone: Asia/Singapore
-theme: minima
 plugins:
   - jekyll-feed
-header_pages:
-  - index.md
-show_excerpts: true
-minima:
-  skin: auto
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+exclude:
+  - README.md
+  - design-qa.md

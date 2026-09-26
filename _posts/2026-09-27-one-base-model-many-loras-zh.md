@@ -4,9 +4,13 @@ title: "一份底模，多个 LoRA：我和 vLLM、Qwen 斗智斗勇的那些日
 date: 2026-09-27 00:30:00 +0800
 categories: [LLM, vLLM, LoRA]
 lang: zh-CN
+permalink: /zh/posts/multi-lora/
+description: 从手工实现到接入官方框架，复盘 Multi-LoRA 在连续批处理、张量并行、Qwen 适配和扩展词表上的工程挑战。
+reading_time: 12
+translation_url: /en/posts/multi-lora/
+translation_lang: en
+translation_label: Read in English
 ---
-
-[Read this article in English]({% post_url 2026-09-27-one-base-model-many-loras-en %})
 
 > 这是一篇 2023～2024 年的工程复盘。文中代码和架构对应当时的 vLLM 版本，请不要拿它当最新版操作手册直接复制粘贴——除非你想顺便复习一下故障排查。
 

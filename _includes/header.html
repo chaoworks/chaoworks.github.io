@@ -1,0 +1,13 @@
+{% assign is_zh = false %}{% if page.lang == 'zh-CN' %}{% assign is_zh = true %}{% endif %}
+<header class="site-header">
+  <div class="header-inner shell">
+    <a class="brand" href="{% if is_zh %}{{ '/zh/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}">ChaoWorks</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="{% if is_zh %}{{ '/zh/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}">{% if is_zh %}文章{% else %}Posts{% endif %}</a>
+      <a href="{% if is_zh %}{{ '/zh/#archive' | relative_url }}{% else %}{{ '/en/#archive' | relative_url }}{% endif %}">{% if is_zh %}归档{% else %}Archive{% endif %}</a>
+      <a href="{% if is_zh %}{{ '/zh/#tags' | relative_url }}{% else %}{{ '/en/#tags' | relative_url }}{% endif %}">{% if is_zh %}主题{% else %}Tags{% endif %}</a>
+      <a href="{% if is_zh %}{{ '/zh/#about' | relative_url }}{% else %}{{ '/en/#about' | relative_url }}{% endif %}">{% if is_zh %}关于{% else %}About{% endif %}</a>
+    </nav>
+    <div class="language-switcher" aria-label="Language"><a href="{% if page.lang == 'en' and page.translation_url %}{{ page.translation_url | relative_url }}{% else %}{{ '/zh/' | relative_url }}{% endif %}" data-language-choice="zh" lang="zh-CN" {% if is_zh %}aria-current="page"{% endif %}>中</a><span aria-hidden="true">/</span><a href="{% if page.lang == 'zh-CN' and page.translation_url %}{{ page.translation_url | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}" data-language-choice="en" lang="en" {% unless is_zh %}aria-current="page"{% endunless %}>EN</a></div>
+  </div>
+</header>
