@@ -3,115 +3,13 @@ layout: default
 ---
 
 <main>
-  <section class="intro shell" aria-labelledby="intro-title">
-    <p class="eyebrow">{{ page.eyebrow }}</p>
-    <h1 id="intro-title">{{ page.heading }}</h1>
-    <p class="intro-copy">{{ page.intro }}</p>
-  </section>
+  <section class="intro shell" aria-labelledby="intro-title"><p class="eyebrow">{{ page.eyebrow }}</p><h1 id="intro-title">{{ page.heading }}</h1><p class="intro-copy">{{ page.intro }}</p></section>
   <section class="post-index shell" id="posts" aria-labelledby="latest-posts">
     <div class="section-heading"><h2 id="latest-posts">{{ page.latest_label }}</h2><a href="#archive">{{ page.all_posts_label }} <span aria-hidden="true">→</span></a></div>
     {% assign language_posts = site.posts | where: 'lang', page.lang %}
-    <div class="post-list">
-      {% for post in language_posts %}
-        <article class="post-row">
-          <div class="post-meta-rail"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: page.date_format }}</time><span>{{ post.reading_time }} {{ page.read_label }}</span></div>
-          <div class="post-summary">
-            <div class="post-tags" aria-label="Tags">{% for category in post.categories %}<span>{{ category }}</span>{% endfor %}</div>
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p>{{ post.description }}</p>
-            <a class="read-more" href="{{ post.url | relative_url }}">{{ page.read_more_label }} <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
+    <div class="post-list">{% for post in language_posts %}<article class="post-row"><div class="post-meta-rail"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: page.date_format }}</time><span>{{ post.reading_time }} {{ page.read_label }}</span></div><div class="post-summary"><div class="post-tags" aria-label="Tags">{% for category in post.categories %}<span>{{ category }}</span>{% endfor %}</div><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3><p>{{ post.description }}</p><a class="read-more" href="{{ post.url | relative_url }}">{{ page.read_more_label }} <span aria-hidden="true">→</span></a></div></article>{% endfor %}</div>
   </section>
-  <section class="archive shell" id="archive" aria-labelledby="archive-title">
-    <div class="section-heading"><h2 id="archive-title">{{ page.archive_label }}</h2></div>
-    <ol class="archive-list">{% for post in language_posts %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ol>
-  </section>
-  <section class="topic-strip shell" id="tags" aria-labelledby="tags-title">
-    <div><p class="eyebrow">{{ page.topics_label }}</p><h2 id="tags-title">LLM Systems · Inference · LoRA · vLLM · Qwen</h2></div><p>{{ page.topics_copy }}</p>
-  </section>
-  <section class="about shell" id="about" aria-labelledby="about-title">
-    <div><p class="eyebrow">{{ page.about_label }}</p><h2 id="about-title">{{ page.about_heading }}</h2></div><p>{{ page.about_copy }}</p>
-  </section>
+  <section class="archive shell" id="archive" aria-labelledby="archive-title"><div class="section-heading"><h2 id="archive-title">{{ page.archive_label }}</h2></div><ol class="archive-list">{% for post in language_posts %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ol></section>
+  <section class="topic-strip shell" id="tags" aria-labelledby="tags-title"><div><p class="eyebrow">{{ page.topics_label }}</p><h2 id="tags-title">LLM Systems · Inference · LoRA · vLLM · Qwen</h2></div><p>{{ page.topics_copy }}</p></section>
+  <section class="about shell" id="about" aria-labelledby="about-title"><div><p class="eyebrow">{{ page.about_label }}</p><h2 id="about-title">{{ page.about_heading }}</h2></div><p>{{ page.about_copy }}</p></section>
 </main>
-*** Add File: /Users/cooper/code/anheng/.github-pages-publish/_layouts/post.html
----
-layout: default
----
-
-<main class="article-shell">
-  <article class="article">
-    <header class="article-header">
-      <div class="post-tags" aria-label="Tags">{% for category in page.categories %}<span>{{ category }}</span>{% endfor %}</div>
-      <h1>{{ page.title }}</h1>
-      <div class="article-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time><span>{{ page.reading_time }} {% if page.lang == 'zh-CN' %}分钟阅读{% else %}min read{% endif %}</span><span>{{ site.author }}</span></div>
-      {% if page.translation_url %}<a class="translation-link" href="{{ page.translation_url | relative_url }}" data-language-choice="{{ page.translation_lang }}">{{ page.translation_label }} <span aria-hidden="true">→</span></a>{% endif %}
-    </header>
-    <details class="toc" open><summary>{% if page.lang == 'zh-CN' %}文章目录{% else %}Table of contents{% endif %}</summary><nav data-toc aria-label="{% if page.lang == 'zh-CN' %}文章目录{% else %}Table of contents{% endif %}"></nav></details>
-    <div class="article-content" data-article-content>{{ content }}</div>
-    <footer class="article-end"><p>{% if page.lang == 'zh-CN' %}感谢阅读。{% else %}Thanks for reading.{% endif %}</p><a href="{% if page.lang == 'zh-CN' %}{{ '/zh/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}">{% if page.lang == 'zh-CN' %}← 返回文章列表{% else %}← Back to all posts{% endif %}</a></footer>
-  </article>
-</main>
-*** Add File: /Users/cooper/code/anheng/.github-pages-publish/zh/index.html
----
-layout: home
-title: 工程笔记
-lang: zh-CN
-eyebrow: 工程笔记
-heading: 关于大模型系统、推理工程与应用 AI 的实践记录。
-intro: 我是 Chao。我记录从模型架构到推理系统，以及一个公式真正走向生产服务之间的工程工作。
-latest_label: 最新文章
-all_posts_label: 查看归档
-read_label: 分钟阅读
-read_more_label: 阅读全文
-archive_label: 归档
-topics_label: 关注主题
-topics_copy: 聚焦大语言模型从研究原型走向可靠系统时，真正影响正确性、性能和可维护性的工程细节。
-about_label: 关于
-about_heading: 从公式到系统。
-about_copy: Chao Wang 的个人技术博客，分享大模型推理、后训练、系统工程与真实项目中的经验和反思。
-date_format: '%Y年%-m月%-d日'
----
-*** Add File: /Users/cooper/code/anheng/.github-pages-publish/en/index.html
----
-layout: home
-title: Engineering Notes
-lang: en
-eyebrow: Engineering Notes
-heading: Notes on LLM systems, inference engineering, and applied AI.
-intro: I’m Chao. I write about building with large language models—from model architecture and inference systems to the engineering work between an equation and a production service.
-latest_label: Latest Posts
-all_posts_label: View archive
-read_label: min read
-read_more_label: Read more
-archive_label: Archive
-topics_label: Topics
-topics_copy: The details that determine whether an LLM idea becomes a correct, efficient, and maintainable production system.
-about_label: About
-about_heading: From equations to systems.
-about_copy: Chao Wang’s personal engineering blog about LLM inference, post-training, systems work, and lessons from building real products.
-date_format: '%b %-d, %Y'
----
-*** Add File: /Users/cooper/code/anheng/.github-pages-publish/assets/js/site.js
-(function () {
-  document.querySelectorAll('[data-language-choice]').forEach(function (link) {
-    link.addEventListener('click', function () { localStorage.setItem('chaoworks-language', link.getAttribute('data-language-choice')); });
-  });
-  var article = document.querySelector('[data-article-content]');
-  var toc = document.querySelector('[data-toc]');
-  if (!article || !toc) return;
-  var list = document.createElement('ol');
-  article.querySelectorAll('h2, h3').forEach(function (heading, index) {
-    if (!heading.id) heading.id = 'section-' + (index + 1);
-    var item = document.createElement('li');
-    if (heading.tagName === 'H3') item.className = 'toc-subsection';
-    var link = document.createElement('a');
-    link.href = '#' + heading.id;
-    link.textContent = heading.textContent;
-    item.appendChild(link);
-    list.appendChild(item);
-  });
-  toc.appendChild(list);
-})();
