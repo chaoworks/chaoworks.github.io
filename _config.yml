@@ -1,0 +1,13 @@
+title: ChaoWorks
+description: Notes on LLM systems, inference engineering, and applied AI.
+url: https://chaoworks.github.io
+author: Chao Wang
+theme: minima
+plugins:
+  - jekyll-feed
+header_pages:
+  - index.md
+show_excerpts: true
+minima:
+  skin: auto
+
