@@ -4,7 +4,7 @@ url: https://chaoworks.github.io
 author: Chao Wang
 timezone: Asia/Singapore
 # Set the GA4 web stream measurement ID (G-...) to enable production analytics.
-google_analytics: ""
+google_analytics: "G-JC9G4C5PDD"
 plugins:
   - jekyll-feed
 markdown: kramdown

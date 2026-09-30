@@ -5,8 +5,9 @@ Source for [chaoworks.github.io](https://chaoworks.github.io/), a personal engin
 ## Website analytics
 
 Google Analytics 4 (GA4) is supported through `_includes/analytics.html`.
-Collection remains disabled until `google_analytics` in `_config.yml` contains
-the real web stream measurement ID (`G-...`). The measurement ID is public;
+The production web stream measurement ID (`G-...`) is configured in
+`google_analytics` in `_config.yml`. Set it to an empty string to disable
+collection. The measurement ID is public;
 account passwords, API secrets, and credentials must not be added to this repo.
 
 ### Activate
