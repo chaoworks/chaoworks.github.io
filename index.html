@@ -3,6 +3,7 @@ layout: default
 title: ChaoWorks
 lang: en
 body_class: language-gateway
+analytics: false
 ---
 
 <main class="gateway" aria-labelledby="gateway-title">
@@ -15,5 +16,5 @@ body_class: language-gateway
   </div>
 </main>
 <script>
-  (function(){var saved=localStorage.getItem('chaoworks-language');var preferred=saved||((navigator.languages||[navigator.language||'en'])[0].toLowerCase().startsWith('zh')?'zh':'en');window.location.replace('{{ site.baseurl }}'+(preferred==='zh'?'/zh/':'/en/'));})();
+  (function(){var saved=localStorage.getItem('chaoworks-language');var preferred=saved||((navigator.languages||[navigator.language||'en'])[0].toLowerCase().startsWith('zh')?'zh':'en');window.location.replace('{{ site.baseurl }}'+(preferred==='zh'?'/zh/':'/en/')+window.location.search+window.location.hash);})();
 </script>
